@@ -4,7 +4,9 @@ import Prelude
 
 import Effect (Effect)
 import Effect.Console (log)
+import Node.Encoding (Encoding(..))
+import Node.FS.Sync (readTextFile)
 
 main :: Effect Unit
 main = do
-  log "🍝"
+  log =<< readTextFile UTF8 "football.dat"
